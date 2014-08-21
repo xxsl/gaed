@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Index of {{path}}{% endblock %}
+{% block main %}
+<h1>Index of {{path}}</h1>
+<ul>
+	<li>
+    	<span class="t"><img src="/static/main.png" alt="main" /></span>
+        <span class="name">Name</span>
+        <span class="date">Last modified</span>
+        <span class="size">Size</span>
+     </li>	
+    <hr class="clear" />
+    {% for folder in folders %}
+        <li class="clear">
+    	<span class="t"><img src="/static/folder.png" alt="Folter"/></span>
+    	<span class="name"><a href="{{folder.path}}">{{folder.name}}/</a></span>
+        <span class="date"> {{folder.last_modified|date:"d-M-Y H:i"}}</span>
+        <span class="size">-</span>
+    </li>
+    {% endfor %}
+    {% for filelist in filelists %}
+    <li class="clear">
+    	<span class="t"><img src="/static/file.png" alt="file"/></span>
+    	<span class="name"><a href="{{filelist.url}}">{{filelist.name}}</a></span>
+        <span class="date">{{filelist.created_at|date:"d-M-Y H:i"}}</span>
+        <span class="size">{{filelist.size|filesizeformat}}</span>  
+    </li>
+    {% endfor %}
+    <hr class="clear" />
+</ul>
+{% endblock %}

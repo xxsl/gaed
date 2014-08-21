@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}管理后台{% endblock %}
+{% block main %}
+<link href="/static/datastore.css" rel="stylesheet" type="text/css" />
+<h2>管理后台 |<a href="/admin/">文件管理</a>|<a href="/admin/folder/add/">添加目录</a></h2>
+<table class="entities">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last Modified</th>
+      <th>Count</th>
+      <th>Control</th>
+    <tr>
+    {% for folder in folders %}
+    	<tr class="{% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
+        <td>{{folder.name|escape}}</td>
+        <td>{{folder.last_modified|date:"Y-m-d  H:i"}}</td>
+    	<td>{{folder.count}}</td>
+        <td><a href="/admin/folder/edit/{{folder.key}}">Edit</a>|<a href="/admin/folder/del/{{folder.key}}" onclick="return confirm('Are you sure you wish to delete this folder?')">Delete</a></td>
+      	</tr>
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}管理后台{% endblock %}
+{% block main %}
+<link href="/static/form.css" rel="stylesheet" type="text/css" />
+<h2>管理后台 |<a href="/admin/">文件管理</a>|<a href="/admin/folder/">目录管理</a></h2>
+<h3>添加目录</h3>
+<form action="/admin/folder/add/" method="post">
+<table class="form">
+	<tr>
+        <td class="name">目录名</td>
+        <td class="value"><input class="string" name="name" id="name" size="20"></td>
+    </tr>
+    
+	<tr>
+        <td class="name">别名{a-z,0-9}</td>
+        <td class="value"><input class="string" name="slug" id="slug" size="20"></td>
+    </tr>
+
+	<tr>
+    	<td></td>
+        <td class="buttons">
+        	<input type="submit" value="Submit"> 
+        </td>
+    </tr>
+</table>
+</form>
+
+{% endblock %}

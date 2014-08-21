@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}管理后台{% endblock %}
+{% block main %}
+<h2>管理后台 |<a href="/admin/folder/">目录管理</a>|<a href="/admin/upload/">上传</a></h2>
+<ul id="filelist">
+	{% for filelist in filelists %} <li><a href="{{filelist.url}}">{{filelist.name}}</a>({{filelist.size|filesizeformat}})下载次数：{{filelist.count}}</li>{% endfor %}
+</ul>
+{% endblock %}

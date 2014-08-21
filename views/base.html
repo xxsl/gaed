@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title %}{% endblock %}</title>
+<style type="text/css">
+ul, ol {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+.name{
+	width:300px;
+	display:block;
+	float:left;
+}
+
+.t{
+	width:20px;
+	display:block;
+	float:left;
+}
+.date{
+	width:200px;
+	display:block;
+	float:left;
+}
+
+.size{
+	width:100px;
+	display:block;
+	float:left;
+}
+
+.clear{
+	clear:both;
+}
+
+</style>
+</head>
+<body>
+{% block main %}
+{% endblock %}
+<p>as3upload Server at Goole App Engine <a href="http://sa3.org" title="菜园子">菜园子</a>|<a href="http://sa3.org/program/sa3upload/">下载源码</a>|<a href="/admin/">管理登陆</a></p> 
+</body>
+</html>

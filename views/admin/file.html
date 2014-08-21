@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}管理后台{% endblock %}
+{% block main %}
+<link href="/static/datastore.css" rel="stylesheet" type="text/css" />
+<h2>管理后台 |<a href="/admin/folder/">目录管理</a>|<a href="/admin/upload/">上传</a>|<a href="/admin/setting/">网站选项</a></h2>
+<table class="entities">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Path</th>
+      <th>Time</th>
+      <th>Size</th>
+      <th>Count</th>
+      <th>Control</th>
+    <tr>
+    {% for filelist in filelists %}
+    	<tr class="{% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
+        <td>{{filelist.name|escape}}</td>
+        <td>{{filelist.path|escape}}</td>
+        <td>{{filelist.created_at|date:"Y-m-d  H:i"}}</td>
+        <td>{{filelist.size|filesizeformat}}</td>
+    	<td>{{filelist.count}}</td>
+        <td><a href="/admin/edit/{{filelist.key}}">Edit</a>|<a href="/admin/del/{{filelist.key}}" onclick="return confirm('Are you sure you wish to delete this file?')">Delete</a></td>
+      	</tr>
+    {% endfor %}
+    </table>
+      <div class="entities g-section g-tpl-50-50">
+          <div class="g-unit">
+            <div id="entities-pager">
+            {% if prev %}<a href="/admin/?page={{prev}}">上一页</a>{% endif %} |
+            {% if next %}<a href="/admin/?page={{next}}">下一页</a>{% endif %}
+            </div>
+          </div>
+        </div>
+{% endblock %}

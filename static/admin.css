@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+color:#3A3A3A;
+font-family:Tahoma,"宋体",Verdana,"Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+font-size:12px;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+line-height:normal;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family:Tahoma,"宋体",Verdana,Helvetica,Arial,sans-serif;
+font-weight:bold;
+padding-top:10px;
+padding-bottom:10px;
+}
+* {
+margin:0;
+padding:0;
+}
+ul, ol {
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+}
+input, button, textarea {
+font-size:12px;
+}
+fieldset {
+border:medium none;
+}
+img, img a {
+border:0 none;
+}
+a {
+color:#0061E7;
+text-decoration:none;
+}
+a:hover {
+text-decoration:underline;
+}
+label {
+cursor:pointer;
+}
+
+#main{
+margin:0 auto;
+width:760px;
+height:auto;
+margin-top:15px;
+margin-bottom:15px;
+background-color:#FFF;
+}
+#copyright{
+clear:both;
+padding-top:10px;}
